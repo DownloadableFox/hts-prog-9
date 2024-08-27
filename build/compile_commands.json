@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/fox/Documents/hts-prog-9/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/hts-prog-9.dir/main.cpp.o -c /home/fox/Documents/hts-prog-9/main.cpp",
+  "file": "/home/fox/Documents/hts-prog-9/main.cpp"
+},
+{
+  "directory": "/home/fox/Documents/hts-prog-9/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/hts-prog-9.dir/sudoku.cpp.o -c /home/fox/Documents/hts-prog-9/sudoku.cpp",
+  "file": "/home/fox/Documents/hts-prog-9/sudoku.cpp"
+}
+]
