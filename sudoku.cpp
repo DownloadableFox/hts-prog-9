@@ -6,6 +6,10 @@
 #include <vector>
 #include <algorithm>
 
+bool is_better(const std::pair<std::vector<char>, std::pair<int, int>> &a, const std::pair<std::vector<char>, std::pair<int, int>> &b) {
+    return a.first.size() > b.first.size();
+}
+
 Sudoku::Sudoku() {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
@@ -46,6 +50,26 @@ std::string Sudoku::to_string() {
     return s;
 }
 
+std::string Sudoku::to_pretty_string() {
+    std::string s = "";
+
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            s += board[i][j] + '0';
+
+            if (j < 8) {
+                s += " ";
+            }
+        }
+
+        if (i < 8) {
+            s += "\n";
+        }
+    }
+
+    return s;
+}
+
 bool Sudoku::solve() {
     std::stack<Sudoku> stack;
     stack.push(*this);
@@ -54,41 +78,47 @@ bool Sudoku::solve() {
         Sudoku current = stack.top();
         stack.pop();
 
+        // std::cout << "forking: " << current.to_string() << std::endl;
+
         if (current.is_solved()) {
             *this = current;
             return true;
         }
-
-        std::vector<std::pair<int, std::pair<int, int>>> empty_cells;
+        
+        std::vector<std::pair<std::vector<char>, std::pair<int, int>>> empty_cells;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                int possibilities = 0;
-
-                for (int k = 1; k <= 9; k++) {
-                    if (current.is_valid(i, j, k + '0')) {
-                        possibilities++;
-                    }
-                }
-
                 if (current.board[i][j] == 0) {
-                    auto pos = std::make_pair(i, j);
+                    std::vector<char> possibilities;
+                    for (int k = 1; k <= 9; k++) {
+                        if (current.is_valid(i, j, k)) {
+                            possibilities.push_back(k);
+                        }
+                    }
+
+                    std::pair<int, int> pos = std::make_pair(i, j);
                     empty_cells.push_back(std::make_pair(possibilities, pos));
                 }
             }
         }
 
-        // sort from least possibilities to most
-        std::sort(empty_cells.rbegin(), empty_cells.rend());
+        // custom sort to prioritize cells with fewer possibilities
+        std::sort(empty_cells.begin(), empty_cells.end(), is_better);
 
         for (auto cell : empty_cells) {
             int row = cell.second.first;
             int col = cell.second.second;
 
+            // try all possibilities
+            // std::cout << "-> trying: " << row << ", " << col << " (possiblities: " << cell.first.size() << ")" << std::endl;
+
             for (int k = 1; k <= 9; k++) {
-                if (current.is_valid(row, col, k + '0')) {
+                if (current.is_valid(row, col, k)) {
                     Sudoku next = current;
-                    next.set(row, col, k + '0');
+                    next.set(row, col, k);
                     stack.push(next);
+
+                    // std::cout << "-> pushing: " << next.to_string() << std::endl;
                 }
             }
         }

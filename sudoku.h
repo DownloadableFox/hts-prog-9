@@ -11,7 +11,8 @@ public:
     char get(int row, int col);
     void set(int row, int col, char num);
     std::string to_string();
-
+    std::string to_pretty_string();
+    
     Sudoku();
     Sudoku(const std::string &s);
 };
