@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hts-prog-9.dir/blowfish.cpp.o"
+  "CMakeFiles/hts-prog-9.dir/blowfish.cpp.o.d"
+  "CMakeFiles/hts-prog-9.dir/crypto.cpp.o"
+  "CMakeFiles/hts-prog-9.dir/crypto.cpp.o.d"
   "CMakeFiles/hts-prog-9.dir/main.cpp.o"
   "CMakeFiles/hts-prog-9.dir/main.cpp.o.d"
   "CMakeFiles/hts-prog-9.dir/sudoku.cpp.o"

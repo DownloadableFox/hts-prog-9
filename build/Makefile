@@ -129,6 +129,54 @@ hts-prog-9/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/build
 .PHONY : hts-prog-9/fast
 
+blowfish.o: blowfish.cpp.o
+.PHONY : blowfish.o
+
+# target to build an object file
+blowfish.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/blowfish.cpp.o
+.PHONY : blowfish.cpp.o
+
+blowfish.i: blowfish.cpp.i
+.PHONY : blowfish.i
+
+# target to preprocess a source file
+blowfish.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/blowfish.cpp.i
+.PHONY : blowfish.cpp.i
+
+blowfish.s: blowfish.cpp.s
+.PHONY : blowfish.s
+
+# target to generate assembly for a file
+blowfish.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/blowfish.cpp.s
+.PHONY : blowfish.cpp.s
+
+crypto.o: crypto.cpp.o
+.PHONY : crypto.o
+
+# target to build an object file
+crypto.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/crypto.cpp.o
+.PHONY : crypto.cpp.o
+
+crypto.i: crypto.cpp.i
+.PHONY : crypto.i
+
+# target to preprocess a source file
+crypto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/crypto.cpp.i
+.PHONY : crypto.cpp.i
+
+crypto.s: crypto.cpp.s
+.PHONY : crypto.s
+
+# target to generate assembly for a file
+crypto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hts-prog-9.dir/build.make CMakeFiles/hts-prog-9.dir/crypto.cpp.s
+.PHONY : crypto.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -186,6 +234,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hts-prog-9"
+	@echo "... blowfish.o"
+	@echo "... blowfish.i"
+	@echo "... blowfish.s"
+	@echo "... crypto.o"
+	@echo "... crypto.i"
+	@echo "... crypto.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

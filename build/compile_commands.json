@@ -8,5 +8,15 @@
   "directory": "/home/fox/Documents/hts-prog-9/build",
   "command": "/usr/bin/c++   -g -o CMakeFiles/hts-prog-9.dir/sudoku.cpp.o -c /home/fox/Documents/hts-prog-9/sudoku.cpp",
   "file": "/home/fox/Documents/hts-prog-9/sudoku.cpp"
+},
+{
+  "directory": "/home/fox/Documents/hts-prog-9/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/hts-prog-9.dir/crypto.cpp.o -c /home/fox/Documents/hts-prog-9/crypto.cpp",
+  "file": "/home/fox/Documents/hts-prog-9/crypto.cpp"
+},
+{
+  "directory": "/home/fox/Documents/hts-prog-9/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/hts-prog-9.dir/blowfish.cpp.o -c /home/fox/Documents/hts-prog-9/blowfish.cpp",
+  "file": "/home/fox/Documents/hts-prog-9/blowfish.cpp"
 }
 ]
